@@ -9,13 +9,14 @@ end
 # @param {ListNode} head
 # @return {ListNode}
 require 'pp'
-def reverse_list(p1, p2)
+def reverse_list(p1, p2, is_head)
     if p2.next.nil?
         p2.next = p1
         p2
     else
-        root = reverse_list(p1.next, p2.next)
+        root = reverse_list(p1.next, p2.next, false)
         p2.next = p1
+        p1.next = nil if is_head 
         root
     end
 end
@@ -36,8 +37,7 @@ def main
         p = n
     }
     print_ll n
-    arr=reverse_list(n, n.next)
-    n.next = nil
+    arr=reverse_list(n, n.next, true)
     print_ll arr
 end
 
