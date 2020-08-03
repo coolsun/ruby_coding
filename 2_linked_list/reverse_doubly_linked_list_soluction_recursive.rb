@@ -11,21 +11,7 @@ end
 # @return {ListNode}
 require 'pp'
 def reverse_list(head)
-    return head if head.nil?  # empty list
-    p1 = head
-    p2 = head.next
-    while (!p2.nil?)
-        t = p2.next
-        p2.next = p1
-        p1.pre = p2
-        p1 = p2
-        p2 = t
-    end
-    # while-loop flips inner pointers (pre, next)
-    # manually flips head.next and p1.pre to complete the reverse
-    head.next = nil
-    p1.pre = nil
-    p1
+    # TBD
 end
 def print_ll(head)
     output = []
