@@ -16,12 +16,10 @@ def reverse_list(head)
  
     #get second node    
     second = head.next;
-    #set first's next to be null
-    head.next = nil;
- 
     rest = reverse_list(second);
     second.next = head;
- 
+    #set first's next to be null
+    head.next = nil;
     return rest;
 end
 def print_ll(head)

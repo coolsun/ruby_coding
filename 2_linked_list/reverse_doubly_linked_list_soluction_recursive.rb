@@ -11,7 +11,22 @@ end
 # @return {ListNode}
 require 'pp'
 def reverse_list(head)
-    # TBD
+    if (head.nil? || head.next.nil?)
+        head.pre = nil;
+        return head;
+    end
+ 
+    #get second node    
+    second = head.next;
+
+    rest = reverse_list(second);
+    second.next = head;
+    head.pre = second;
+
+    #set first's next to be null
+    head.next = nil;
+    
+    return rest;
 end
 def print_ll(head)
     output = []
