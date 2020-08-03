@@ -54,9 +54,11 @@ def main
         n.next.pre = n
         n = n.next
     end
-    print_ll v
+    puts "expect: [1, 2, 3, 4, 5, 5, 4, 3, 2, 1]"
+    print_ll v 
     arr=reverse_list(v)
-    print_ll arr
+    puts "expect: [5, 4, 3, 2, 1, 1, 2, 3, 4, 5]"
+    print_ll arr # 
 end
 
 main
