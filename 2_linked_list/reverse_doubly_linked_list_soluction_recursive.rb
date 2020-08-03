@@ -12,12 +12,16 @@ end
 require 'pp'
 def reverse_list(head)
     if (head.nil? || head.next.nil?)
-        head.pre = nil;  # flip the outer pointer
+        # !!can be here, too.
+        # head.pre = nil;
         return head;
     end
  
     #get second node    
     second = head.next;
+
+    # !!can be here, too.
+    # head.next = nil;  
 
     rest = reverse_list(second);
     # flip the inner pointers
@@ -26,7 +30,8 @@ def reverse_list(head)
 
     #flip the outer pointer
     head.next = nil; 
-    
+    rest.pre = nil;
+
     return rest;
 end
 def print_ll(head)
